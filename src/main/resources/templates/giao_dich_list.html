@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Giao Dịch</title>
+</head>
+
+<body>
+<h2>Danh Sách Giao Dịch</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Loại dịch vụ</th>
+        <th>Đơn giá</th>
+        <th>Diện tích</th>
+        <th>Ngày giao dịch</th>
+        <th>Khách hàng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- JSTL forEach để hiển thị danh sách giao dịch -->
+    <c:forEach items="${giaoDichList}" var="giaoDich">
+        <tr>
+            <td>${giaoDich.loaiDichVu}</td>
+            <td>${giaoDich.donGia}</td>
+            <td>${giaoDich.dienTich}</td>
+            <td>${giaoDich.ngayGiaoDich}</td>
+            <td>${giaoDich.khachHang.tenKhachHang}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+</body>
+
+</html>

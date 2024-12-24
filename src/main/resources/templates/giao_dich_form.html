@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Giao Dịch</title>
+</head>
+
+<body>
+<h2>Thêm Giao Dịch</h2>
+<form action="/giao-dich/them" method="post">
+    <label for="loaiDichVu">Loại dịch vụ:</label>
+    <input type="text" id="loaiDichVu" name="loaiDichVu" required><br><br>
+
+    <label for="donGia">Đơn giá:</label>
+    <input type="number" id="donGia" name="donGia" required><br><br>
+
+    <label for="dienTich">Diện tích:</label>
+    <input type="number" id="dienTich" name="dienTich" required><br><br>
+
+    <label for="ngayGiaoDich">Ngày giao dịch:</label>
+    <input type="date" id="ngayGiaoDich" name="ngayGiaoDich" required><br><br>
+
+    <label for="khachHang">Khách hàng:</label>
+    <select name="khachHang" id="khachHang" required>
+
+        <c:forEach items="${khachHangs}" var="khachHang">
+            <option value="${khachHang.maKhachHang}">${khachHang.tenKhachHang}</option>
+        </c:forEach>
+    </select><br><br>
+
+    <button type="submit">Lưu giao dịch</button>
+</form>
+</body>
+
+</html>
